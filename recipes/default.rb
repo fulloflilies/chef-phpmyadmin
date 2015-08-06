@@ -60,6 +60,7 @@ user user do
 	home home
 	shell '/usr/sbin/nologin'
 	supports :manage_home => true
+	not_if "grep #{user} /etc/passwd"
 end
 
 directory home do
